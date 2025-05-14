@@ -2,16 +2,16 @@
 
 The `Compiler` standard library module provides an interface to Julia's internal compiler APIs.
 
-This repository manages a special v0.0.0 release of the `Compiler` stdlib.
+This repository manages a special v0.1.0 release of the `Compiler` stdlib.
 This version is a placeholder implementation that re‐exports the `Base.Compiler` module
 under the `Compiler` name.
-In other words, installing `Compiler` v0.0.0 gives you the same compiler implementation
+In other words, installing `Compiler` v0.1.0 gives you the same compiler implementation
 bundled with Julia runtime (`Base.Compiler`).
 
 The reason for providing this placeholder version is to minimize compatibility issues
 between the `Compiler` standard library, the Julia runtime system, and dependent packages
 until proper versioning for the `Compiler` stdlib is in place.
-I.e. as long as you use `Compiler` v0.0.0, its implementation is identical to `Base.Compiler`,
+I.e. as long as you use `Compiler` v0.1.0, its implementation is identical to `Base.Compiler`,
 so you don’t need to worry about compatibility gaps with the Julia runtime.
 
 Using this `Compiler` stdlib instead of the bundled `Base.Compiler` module lets you switch
@@ -31,12 +31,12 @@ your `Project.toml` as follows:
 Compiler = "807dbc54-b67e-4c79-8afb-eafe4df6f2e1"
 
 [compat]
-Compiler = "0"
+Compiler = "0.1"
 ```
 
-With the setup above, the placeholder version of `Compiler` (v0.0.0) will be installed by default.[^1]
+With the setup above, the placeholder version of `Compiler` (v0.1.0) will be installed by default.[^1]
 
-[^1]: Currently, only version v0.0.0 is registered in the [General](https://github.com/JuliaRegistries/General) registry.
+[^1]: Currently, only version v0.1.0 is registered in the [General](https://github.com/JuliaRegistries/General) registry.
 
 If needed, you can switch to a custom implementation of the `Compiler` module by running
 ```julia-repl
