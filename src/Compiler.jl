@@ -12,7 +12,9 @@ let names = Base.:(>=)(Base.VERSION.minor, 12) ?
             continue
         end
         Core.eval(Compiler, :(using .BaseCompiler: $name))
-        Core.eval(Compiler, Expr(:public, name))
+        Base.@static if Base.:(>=)(Base.VERSION.minor, 11)
+            Core.eval(Compiler, Expr(:public, name))
+        end
     end
 end
 
